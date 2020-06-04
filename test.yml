@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  description: Swagger Api info for Demo
+  version: '1.0'
+  title: Customer Management
+host: 'hk-demo14-test.apigee.net'
+basePath: /
+tags:
+  - name: Customer Management Api
+    description: Customer Management Controller
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  
+  /customerEnquiry/getFullProfile/{Id}:
+    get:
+      tags:
+        - Customer Operations Api
+      summary: Get FullProfile Api 
+      operationId: getCustomerFullProfile
+      consumes:
+        - application/json
+      parameters:
+        - name: Id
+          in: path
+          description: customerId 
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success|Ok
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  
